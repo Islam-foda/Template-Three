@@ -1,0 +1,116 @@
+/* Global Varibles */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap");
+
+:root {
+  --main-color: #eb8e14;
+  --transparent-color: #0f748fb3;
+  --secondary-color: #2c4755;
+  --section-padding: 100px;
+  --paragraph-color: #777;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Work Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Work Sans", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  padding: 31px 10px;
+  display: block;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+}
+
+/* Small */
+
+@media (min-width: 768px) {
+  .container,
+  .contact .content {
+    width: 750px;
+  }
+}
+
+/* Medium */
+
+@media (min-width: 992px) {
+  .container,
+  .contact .content {
+    width: 970px;
+  }
+}
+
+/* Large */
+
+@media (min-width: 1200px) {
+  .container,
+  .contact .content {
+    width: 1170px;
+  }
+}
+
+/* End Global Varibles */
+/* Start Header */
+.header {
+  box-shadow: 0 0 10px #eee;
+}
+.header .container {
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.logo {
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 24px;
+}
+.header .container .nav-bar .nav-menu {
+  display: flex;
+}
+.header .container .nav-bar .nav-menu a {
+  padding: 30px;
+  position: relative;
+}
+.header .container .nav-bar .nav-menu a::after {
+  transition: 0.3s;
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 4px;
+  top: 0;
+  left: 0;
+  background-color: var(--main-color);
+}
+.header .container .nav-bar a:hover::after {
+  width: 100%;
+}
+.header .container .nav-bar a:hover {
+  color: var(--main-color);
+  background-color: #fafafa;
+}
+/* End Header */

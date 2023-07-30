@@ -3,8 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&family=Work+Sans:wght@200;300;400;500;600;700;800&display=swap");
 
 :root {
-  --main-color: #eb8e14;
-  --transparent-color: #0f748fb3;
+  --main-color: #e67519;
+  --transparent-color: #8f670fb3;
   --secondary-color: #2c4755;
   --section-padding: 100px;
   --paragraph-color: #777;
@@ -151,6 +151,7 @@ span:last-of-type {
 .header .container .nav-bar .nav-menu a {
   padding: 30px;
   position: relative;
+  transition: var(--main-transition);
 }
 .header .container .nav-bar .nav-menu a::after {
   transition: 0.3s;
@@ -188,36 +189,13 @@ span:last-of-type {
   position: absolute;
   top: calc(100% - -5em);
   left: 0;
-  margin-top: 1em;
+  margin-top: 0.1em;
   column-gap: 1em;
-  padding-bottom: 1.5em;
+  padding: 2em;
   border-bottom: 0.3em solid var(--main-color);
   opacity: 0;
   z-index: -1;
   transition: top var(--main-transition), opacity var(--main-transition);
-}
-@media (max-width: 991px) {
-  .hidden-menu img {
-    display: none;
-  }
-  .hidden-menu {
-    grid-template-columns: auto;
-    grid-template-areas: "grid";
-  }
-}
-@media (max-width: 767px) {
-  .active {
-    display: flex !important;
-    flex-direction: column;
-    align-items: center;
-  }
-  .hidden-menu .grid {
-    flex-direction: column;
-    padding: 0 3em;
-  }
-  .hidden-menu ul {
-    width: 100%;
-  }
 }
 
 .hidden-menu img {
@@ -229,7 +207,8 @@ span:last-of-type {
   grid-area: grid;
   display: flex;
   justify-content: center;
-  /* flex-direction: column; */
+  gap: 2em;
+  padding: 0 1.5em;
 }
 
 .hidden-menu .grid .list-1 {
@@ -239,14 +218,18 @@ span:last-of-type {
 .hidden-menu .grid .list-2 {
   flex-grow: 1;
 }
+
 .hidden-menu span {
   top: 5px;
   position: relative;
 }
 .header .nav-menu .hidden-menu ul.grid li > a {
-  padding: 1em;
+  padding: 0.5em;
   color: var(--main-color);
-  border-bottom: 0.1em solid var(--main-color);
+}
+.header .nav-menu .hidden-menu ul.grid .list-1 li:not(:last-child),
+.header .nav-menu .hidden-menu ul.grid .list-2 li:not(:last-child) {
+  border-bottom: 0.1em solid var(--transparent-color);
 }
 .header .nav-menu .hidden-menu ul.grid li > a:hover {
   background-color: none;
@@ -263,6 +246,34 @@ span:last-of-type {
 }
 .header .nav-menu .hidden-menu ul.grid li > a:hover::after {
   width: 100%;
+}
+@media (max-width: 991px) {
+  .hidden-menu img {
+    display: none;
+  }
+  .hidden-menu {
+    grid-template-columns: auto;
+    grid-template-areas: "grid";
+  }
+}
+@media (max-width: 767px) {
+  .active {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0.1em;
+  }
+  .hidden-menu .grid {
+    flex-direction: column;
+    gap: 0.1em;
+  }
+  .hidden-menu ul {
+    width: 100%;
+  }
+  .header .nav-menu .hidden-menu ul.grid .list-1 li {
+    border-bottom: 0.1em solid var(--transparent-color);
+  }
 }
 /* Hidden Menu */
 /* Landing Page */

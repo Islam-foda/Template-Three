@@ -209,14 +209,13 @@ span:last-of-type {
   justify-content: center;
   gap: 2em;
   padding: 0 1.5em;
+  font-size: 14px;
 }
 
-.hidden-menu .grid .list-1 {
-  flex-grow: 1;
-}
-
+.hidden-menu .grid .list-1,
 .hidden-menu .grid .list-2 {
   flex-grow: 1;
+  flex-basis: 49%;
 }
 
 .hidden-menu span {
